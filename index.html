@@ -5,45 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ココフォリア向けロールテーブル作成ツール</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for the arrow icon -->
+    <!-- Font Awesome for the trash icon (arrow will be unicode) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>ココフォリア向けロールテーブル作成ツール</h1>
 
-        <div class="main-content">
-            <div class="input-section">
-                <div class="input-group">
-                    <label for="titleInput">タイトル</label>
-                    <input type="text" id="titleInput" placeholder="ロールテーブルのタイトルを入力">
-                </div>
-                <div class="input-group">
-                    <label for="contentInput">ロールテーブルの内容 (改行で項目を区切ります)</label>
-                    <textarea id="contentInput" rows="7" placeholder="内容を1行ずつ入力してください"></textarea>
-                </div>
-
-                <div class="options-section">
-                    <span class="mode-label">通常コマンド</span>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="chatPaletteMode">
-                        <label for="chatPaletteMode" class="slider round"></label>
-                    </div>
-                    <span class="mode-label">チャットパレット用 (/n区切り)</span>
-                    <button id="resetButton" class="button button-reset" title="入力内容をリセット"><i class="fas fa-trash-alt"></i></button>
-                </div>
+        <div class="input-section">
+            <div class="input-group">
+                <label for="titleInput">タイトル</label>
+                <input type="text" id="titleInput" placeholder="ロールテーブルのタイトルを入力">
+            </div>
+            <div class="input-group">
+                <label for="contentInput">ロールテーブルの内容 (改行で項目を区切ります)</label>
+                <textarea id="contentInput" rows="7" placeholder="内容を1行ずつ入力してください"></textarea>
             </div>
 
-            <div class="arrow-icon">
-                <i class="fas fa-arrow-down"></i>
+            <div class="options-section">
+                <span class="mode-label">通常コマンド</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="chatPaletteMode">
+                    <label for="chatPaletteMode" class="slider round"></label>
+                </div>
+                <span class="mode-label">チャットパレット用 (/n区切り)</span>
+                <button id="resetButton" class="button button-reset" title="入力内容をリセット"><i class="fas fa-trash-alt"></i></button>
             </div>
+        </div>
 
-            <div class="output-section">
-                <h2>生成結果</h2>
-                <textarea id="outputArea" rows="15" readonly></textarea>
-                <button id="copyButton" class="button button-secondary">結果をコピー</button>
-                <span id="copyMessage" class="copy-message">Copied!</span>
-            </div>
+        <div class="arrow-icon">
+            ▼
+        </div>
+
+        <div class="output-section">
+            <h2>生成結果</h2>
+            <textarea id="outputArea" rows="15" readonly></textarea>
+            <button id="copyButton" class="button button-secondary">結果をコピー</button>
+            <span id="copyMessage" class="copy-message">Copied!</span>
         </div>
     </div>
 
