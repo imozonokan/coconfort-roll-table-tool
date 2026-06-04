@@ -1,0 +1,262 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 上部に寄せる */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-section, .output-section, .options-section {
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.options-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* スマホ対応 */
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 15px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-switch span {
+    margin-left: 70px;
+    font-weight: 500;
+    color: #555;
+    white-space: nowrap; /* スマホでの折り返し防止 */
+}
+
+.button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    margin-top: 10px; /* スマホでボタンが並んだ時の余白 */
+    flex-shrink: 0; /* ボタンの縮小を防ぐ */
+}
+
+.button-primary {
+    background-color: #28a745;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.button-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: #007bff;
+    color: white;
+    width: auto; /* コピーボタンは幅を自動調整 */
+    float: right; /* 右に寄せる */
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.button-secondary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.button-reset {
+    background-color: #dc3545;
+    color: white;
+    margin-left: auto; /* 右に寄せる */
+}
+
+.button-reset:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+#outputArea {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    color: #495057;
+    margin-bottom: 15px;
+    white-space: pre-wrap; /* 改行を保持 */
+    word-wrap: break-word; /* 長い単語の途中で改行 */
+}
+
+.copy-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-left: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute; /* ポップアップを邪魔しないように */
+    right: 30px; /* コピーボタンの近くに表示 */
+    bottom: 25px;
+    background-color: #e6ffed;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Clearfix for float */
+.output-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .input-section, .output-section, .options-section {
+        padding: 15px;
+    }
+
+    .options-section {
+        flex-direction: column; /* 縦並び */
+        align-items: flex-start; /* 左寄せ */
+    }
+
+    .toggle-switch {
+        margin-bottom: 15px; /* 下に余白 */
+    }
+
+    .toggle-switch span {
+        margin-left: 0; /* 左寄せ */
+        display: block; /* 新しい行に移動 */
+        margin-top: 5px; /* 上に余白 */
+    }
+
+    .button {
+        width: 100%; /* 全幅 */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .button-secondary {
+        float: none; /* フロート解除 */
+        margin-top: 15px; /* 上に余白 */
+    }
+
+    .copy-message {
+        position: static; /* 通常の位置に戻す */
+        display: block; /* ブロック要素にして新しい行に */
+        text-align: right; /* 右寄せ */
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}
