@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ココフォリア向けロールテーブル作成ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ココフォリア向けロールテーブル作成ツール</h1>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="titleInput">タイトル</label>
+                <input type="text" id="titleInput" placeholder="ロールテーブルのタイトルを入力">
+            </div>
+            <div class="input-group">
+                <label for="contentInput">ロールテーブルの内容 (改行で項目を区切ります)</label>
+                <textarea id="contentInput" rows="10" placeholder="内容を1行ずつ入力してください"></textarea>
+            </div>
+        </div>
+
+        <div class="options-section">
+            <div class="toggle-switch">
+                <input type="checkbox" id="chatPaletteMode">
+                <label for="chatPaletteMode" class="slider"></label>
+                <span>チャットパレット用 (/n区切り)</span>
+            </div>
+            <button id="resetButton" class="button button-reset">入力内容をリセット</button>
+        </div>
+
+        <button id="generateButton" class="button button-primary">ロールテーブルを生成</button>
+
+        <div class="output-section">
+            <h2>生成結果</h2>
+            <textarea id="outputArea" rows="15" readonly></textarea>
+            <button id="copyButton" class="button button-secondary">結果をコピー</button>
+            <span id="copyMessage" class="copy-message">Copied!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
