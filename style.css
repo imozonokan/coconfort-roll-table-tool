@@ -2,74 +2,74 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     color: #333;
-    line-height: 1.4; /* 行の高さをさらに小さく */
+    line-height: 1.4;
     margin: 0;
-    padding: 10px; /* 全体のパディングをさらに小さく */
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
-    font-size: 0.9em; /* 全体のフォントサイズを小さく */
+    font-size: 0.9em;
 }
 
 .container {
     background-color: #ffffff;
-    padding: 20px; /* パディングを小さく */
-    border-radius: 8px; /* 角丸を小さく */
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08); /* 影を小さく */
-    max-width: 500px; /* 最大幅を大幅に小さくして常に縦並びを強制 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* 常に縦方向に配置 */
-    align-items: center; /* 子要素を中央揃え */
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 15px; /* マージンを小さく */
+    margin-bottom: 15px;
     font-weight: 600;
-    font-size: 1.6em; /* タイトルフォントサイズを調整 */
+    font-size: 1.6em;
 }
 
 h2 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 10px; /* マージンを小さく */
+    margin-bottom: 10px;
     font-weight: 600;
-    font-size: 1.3em; /* サブタイトルフォントサイズを調整 */
+    font-size: 1.3em;
 }
 
 .input-section, .output-section {
-    width: 100%; /* 親要素の幅に合わせる */
+    width: 100%;
     border: 1px solid #e0e0e0;
-    padding: 15px; /* パディングを小さく */
-    border-radius: 7px; /* 角丸を小さく */
+    padding: 15px;
+    border-radius: 7px;
     background-color: #fcfcfc;
-    margin-bottom: 15px; /* 下マージンを調整 */
+    margin-bottom: 15px;
 }
 
 .input-group {
-    margin-bottom: 12px; /* マージンを小さく */
+    margin-bottom: 12px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px; /* マージンを小さく */
+    margin-bottom: 5px;
     font-weight: 500;
     color: #555;
-    font-size: 0.85em; /* フォントサイズを小さく */
+    font-size: 0.85em;
 }
 
 input[type="text"],
 textarea {
-    width: calc(100% - 10px); /* パディングを考慮 */
-    padding: 9px; /* パディングを小さく */
+    width: calc(100% - 10px);
+    padding: 9px;
     border: 1px solid #ced4da;
-    border-radius: 4px; /* 角丸を小さく */
-    font-size: 0.85rem; /* フォントサイズを小さく */
+    border-radius: 4px;
+    font-size: 0.85rem;
     box-sizing: border-box;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -77,32 +77,32 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
     border-color: #007bff;
-    box-shadow: 0 0 0 0.12rem rgba(0, 123, 255, 0.25); /* 影を小さく */
+    box-shadow: 0 0 0 0.12rem rgba(0, 123, 255, 0.25);
     outline: none;
 }
 
 textarea {
     resize: vertical;
-    min-height: 80px; /* 最小高さを調整 */
+    min-height: 80px;
 }
 
 .options-section {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* 左寄せに戻す */
-    gap: 8px; /* 要素間の間隔を小さく */
-    margin-top: 12px; /* マージンを小さく */
-    padding: 10px 15px; /* パディングを調整 */
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 7px;
     background-color: #fcfcfc;
-    flex-wrap: wrap; /* 小さい画面で折り返す */
+    flex-wrap: wrap;
 }
 
 .mode-label {
     font-weight: 500;
     color: #555;
-    font-size: 0.85em; /* フォントサイズを小さく */
+    font-size: 0.85em;
     white-space: nowrap;
 }
 
@@ -110,43 +110,85 @@ textarea {
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 40px; /* 幅をさらに小さく */
-    height: 22px; /* 高さをさらに小さく */
+    width: 40px;
+    height: 22px;
     flex-shrink: 0;
 }
 
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 .slider {
-    border-radius: 22px; /* 高さに合わせて調整 */
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 22px;
 }
 
 .slider:before {
-    height: 16px; /* 高さを小さく */
-    width: 16px; /* 幅を小さく */
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
     left: 3px;
     bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
 }
 
 input:checked + .slider:before {
-    transform: translateX(18px); /* スライド距離を調整 */
+    transform: translateX(18px);
 }
 
 .button {
-    padding: 7px 12px; /* パディングを小さく */
-    border-radius: 4px; /* 角丸を小さく */
-    font-size: 0.85rem; /* フォントサイズを小さく */
-    gap: 4px; /* アイコンとテキストの間隔を小さく */
+    padding: 7px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .button-secondary {
-    float: right;
-    margin-top: 8px; /* マージンを調整 */
+    background-color: #007bff;
+    color: white;
+    /* float: right; */ /* floatを削除しflexboxで制御 */
+    /* margin-top: 8px; */ /* 親のflexboxで調整 */
+}
+
+.button-secondary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 .button-reset {
     background-color: #dc3545;
     color: white;
-    margin-left: auto; /* 右寄せ */
-    padding: 7px 10px; /* パディングを調整 */
+    margin-left: auto;
+    padding: 7px 10px;
+}
+
+.button-reset:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
 }
 
 #outputArea {
@@ -154,26 +196,43 @@ input:checked + .slider:before {
     border: 1px solid #ced4da;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     color: #495057;
-    margin-bottom: 8px; /* マージンを小さく */
+    margin-bottom: 8px;
     white-space: pre-wrap;
     word-wrap: break-word;
-    font-size: 0.85rem; /* フォントサイズを小さく */
-    min-height: 150px; /* 最小高さを調整 */
+    font-size: 0.85rem;
+    min-height: 150px;
+}
+
+/* コピーメッセージとボタンを内包するdiv */
+.output-actions {
+    display: flex;
+    justify-content: flex-end; /* 右端に寄せる */
+    align-items: center; /* 垂直中央揃え */
+    gap: 10px; /* メッセージとボタンの間隔 */
+    margin-top: 5px; /* 必要に応じて調整 */
 }
 
 .copy-message {
-    margin-left: 8px; /* マージンを小さく */
-    right: 15px; /* 位置を調整 */
-    bottom: 15px; /* 位置を調整 */
-    padding: 3px 6px; /* パディングを小さく */
-    border-radius: 3px; /* 角丸を小さく */
+    color: #28a745;
+    font-weight: bold;
+    /* margin-left: 8px; */ /* gapで制御するため削除 */
+    opacity: 0; /* 初期状態では非表示 */
+    transition: opacity 0.3s ease-in-out;
+    /* position: relative; */ /* flexbox内で制御するため削除 */
+    /* right: unset; */
+    /* bottom: unset; */
+    background-color: #e6ffed;
+    padding: 3px 6px;
+    border-radius: 3px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.08);
     font-size: 0.8em;
+    white-space: nowrap; /* 折り返し防止 */
 }
+
 
 .output-section {
     position: relative;
-    margin-bottom: 0; /* 最後のセクションなので下マージンなし */
+    margin-bottom: 0;
 }
 
 /* 矢印アイコン */
@@ -181,11 +240,11 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 0; /* 上下のパディングを小さく */
-    font-size: 1.8em; /* アイコンサイズを調整 */
+    padding: 8px 0;
+    font-size: 1.8em;
     color: #6c757d;
     opacity: 0.8;
-    margin-bottom: 15px; /* 下マージンを調整 */
+    margin-bottom: 15px;
 }
 
 /* レスポンシブデザインの調整 */
@@ -220,10 +279,10 @@ input:checked + .slider:before {
     }
 
     .options-section {
-        justify-content: space-between; /* 要素を左右に広げる */
+        justify-content: space-between;
         gap: 6px;
         padding: 8px 12px;
-        flex-wrap: wrap; /* スマホで折り返す */
+        flex-wrap: wrap;
     }
 
     .mode-label {
@@ -242,10 +301,10 @@ input:checked + .slider:before {
     }
 
     .button-reset {
-        margin-top: 0; /* 左右の余白を優先 */
+        margin-top: 0;
     }
     .button-secondary {
-        margin-top: 8px;
+        /* margin-top: 8px; */ /* output-actionsのflexboxで制御 */
     }
 
     #outputArea {
@@ -253,5 +312,16 @@ input:checked + .slider:before {
     }
     .copy-message {
         font-size: 0.75em;
+        /* position: static; */ /* flexbox内で制御 */
+        /* display: inline-block; */
+        /* text-align: right; */
+        /* margin-top: 0; */
+        /* margin-right: 0; */
+    }
+
+    .output-actions {
+        flex-direction: row; /* スマホでも横並びを維持 */
+        justify-content: flex-end; /* 右寄せ */
+        gap: 8px;
     }
 }
