@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleInput = document.getElementById('titleInput');
     const contentInput = document.getElementById('contentInput');
     const chatPaletteMode = document.getElementById('chatPaletteMode');
-    const generateButton = document.getElementById('generateButton');
+    // const generateButton = document.getElementById('generateButton'); // 削除
     const resetButton = document.getElementById('resetButton');
     const outputArea = document.getElementById('outputArea');
     const copyButton = document.getElementById('copyButton');
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = titleInput.value.trim();
         const contentLines = contentInput.value.split('\n').map(line => line.trim()).filter(line => line !== '');
 
+        // タイトルまたは内容が空の場合は、エラーメッセージを表示し、生成を中断
         if (!title && contentLines.length === 0) {
             outputArea.value = 'タイトルと内容を入力してください。';
             return;
@@ -50,10 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
         contentInput.value = '';
         outputArea.value = '';
         chatPaletteMode.checked = false; // チェックボックスもリセット
+        generateRollTable(); // リセット後も表示を更新
     });
 
-    // 生成ボタンのイベントリスナー
-    generateButton.addEventListener('click', generateRollTable);
+    // generateButton のイベントリスナーは不要になったため削除
+    // generateButton.addEventListener('click', generateRollTable);
 
     // コピーボタンのイベントリスナー
     copyButton.addEventListener('click', () => {
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 入力内容変更時に自動生成（任意）
+    // 入力内容変更時に自動生成
     titleInput.addEventListener('input', generateRollTable);
     contentInput.addEventListener('input', generateRollTable);
     chatPaletteMode.addEventListener('change', generateRollTable);
