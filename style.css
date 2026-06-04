@@ -2,59 +2,81 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.5; /* 行の高さを少し小さく */
     margin: 0;
-    padding: 20px;
+    padding: 15px; /* 全体のパディングを小さく */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 上部に寄せる */
+    align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
+    font-size: 0.95em; /* 全体のフォントサイズを微調整 */
 }
 
 .container {
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    padding: 25px; /* パディングを小さく */
+    border-radius: 10px; /* 角丸を少し小さく */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 影を小さく */
+    max-width: 800px; /* 最大幅を小さく */
     width: 100%;
     box-sizing: border-box;
+    display: flex; /* コンテンツ配置のため追加 */
+    flex-direction: column; /* 縦方向に配置 */
 }
 
-h1, h2 {
+h1 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* マージンを小さく */
     font-weight: 600;
+    font-size: 1.8em; /* タイトルフォントサイズを調整 */
 }
 
-.input-section, .output-section, .options-section {
-    margin-bottom: 30px;
+h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px; /* マージンを小さく */
+    font-weight: 600;
+    font-size: 1.4em; /* サブタイトルフォントサイズを調整 */
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap; /* レスポンシブ対応 */
+    gap: 15px; /* セクション間の間隔 */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.input-section, .output-section {
+    flex: 1; /* 等しい幅 */
+    min-width: 300px; /* 最小幅 */
     border: 1px solid #e0e0e0;
-    padding: 20px;
+    padding: 18px; /* パディングを小さく */
     border-radius: 8px;
     background-color: #fcfcfc;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* マージンを小さく */
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* マージンを小さく */
     font-weight: 500;
     color: #555;
+    font-size: 0.9em;
 }
 
 input[type="text"],
 textarea {
-    width: calc(100% - 20px);
-    padding: 12px;
+    width: calc(100% - 15px); /* パディングを考慮 */
+    padding: 10px; /* パディングを小さく */
     border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 5px; /* 角丸を小さく */
+    font-size: 0.9rem; /* フォントサイズを小さく */
     box-sizing: border-box;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -62,30 +84,41 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
     border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25); /* 影を小さく */
     outline: none;
 }
 
 textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 90px; /* 最小高さを調整 */
 }
 
 .options-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* スマホ対応 */
-    margin-top: 20px;
-    padding: 15px 20px;
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: flex-end; /* 右寄せ */
+    gap: 10px; /* 要素間の間隔 */
+    margin-top: 15px; /* マージンを小さく */
+    padding: 12px 18px; /* パディングを調整 */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
 }
 
+.mode-label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9em;
+    white-space: nowrap; /* 折り返し防止 */
+}
+
+/* スイッチのデザイン */
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin-right: 15px;
+    width: 45px; /* 幅を小さく */
+    height: 25px; /* 高さを小さく */
+    flex-shrink: 0; /* 縮小を防ぐ */
 }
 
 .toggle-switch input {
@@ -103,16 +136,16 @@ textarea {
     bottom: 0;
     background-color: #ccc;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 25px; /* 高さに合わせて調整 */
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 19px; /* 高さを小さく */
+    width: 19px; /* 幅を小さく */
+    left: 3px; /* 位置を調整 */
+    bottom: 3px; /* 位置を調整 */
     background-color: white;
     transition: .4s;
     border-radius: 50%;
@@ -123,64 +156,45 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.toggle-switch span {
-    margin-left: 70px;
-    font-weight: 500;
-    color: #555;
-    white-space: nowrap; /* スマホでの折り返し防止 */
+    transform: translateX(20px); /* スライド距離を調整 */
 }
 
 .button {
-    padding: 12px 25px;
+    padding: 8px 15px; /* パディングを小さく */
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 5px; /* 角丸を小さく */
+    font-size: 0.9rem; /* フォントサイズを小さく */
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-    margin-top: 10px; /* スマホでボタンが並んだ時の余白 */
-    flex-shrink: 0; /* ボタンの縮小を防ぐ */
-}
-
-.button-primary {
-    background-color: #28a745;
-    color: white;
-    display: block;
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-.button-primary:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+    flex-shrink: 0;
+    display: flex; /* アイコン配置のため */
+    align-items: center; /* アイコン垂直中央揃え */
+    justify-content: center; /* アイコン水平中央揃え */
+    gap: 5px; /* アイコンとテキストの間隔 */
 }
 
 .button-secondary {
     background-color: #007bff;
     color: white;
-    width: auto; /* コピーボタンは幅を自動調整 */
-    float: right; /* 右に寄せる */
-    margin-top: 10px;
-    margin-right: 0;
+    float: right;
+    margin-top: 10px; /* マージンを調整 */
 }
 
 .button-secondary:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .button-reset {
     background-color: #dc3545;
     color: white;
-    margin-left: auto; /* 右に寄せる */
+    margin-left: auto; /* 右寄せ */
+    padding: 8px 12px; /* パディングを調整してアイコンのみでも見栄え良く */
 }
 
 .button-reset:hover {
     background-color: #c82333;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 #outputArea {
@@ -188,75 +202,148 @@ input:checked + .slider:before {
     border: 1px solid #ced4da;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     color: #495057;
-    margin-bottom: 15px;
-    white-space: pre-wrap; /* 改行を保持 */
-    word-wrap: break-word; /* 長い単語の途中で改行 */
+    margin-bottom: 10px; /* マージンを小さく */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem; /* フォントサイズを小さく */
+    min-height: 180px; /* 最小高さを調整 */
 }
 
 .copy-message {
     color: #28a745;
     font-weight: bold;
-    margin-left: 15px;
+    margin-left: 10px; /* マージンを小さく */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    position: absolute; /* ポップアップを邪魔しないように */
-    right: 30px; /* コピーボタンの近くに表示 */
-    bottom: 25px;
+    position: absolute;
+    right: 20px; /* 位置を調整 */
+    bottom: 18px; /* 位置を調整 */
     background-color: #e6ffed;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 4px 8px; /* パディングを小さく */
+    border-radius: 4px; /* 角丸を小さく */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.85em;
 }
 
-/* Clearfix for float */
+.output-section {
+    position: relative; /* コピーメッセージの基準 */
+}
+
 .output-section::after {
     content: "";
     display: table;
     clear: both;
 }
 
+/* 矢印アイコン */
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0; /* 上下のパディング */
+    font-size: 2em; /* アイコンサイズ */
+    color: #6c757d;
+    opacity: 0.8;
+}
 
 /* レスポンシブデザイン */
+@media (min-width: 769px) {
+    .main-content {
+        flex-wrap: nowrap; /* PCサイズでは折り返さない */
+        align-items: stretch; /* 高さ揃え */
+    }
+    .arrow-icon {
+        flex-direction: column; /* PCでは縦方向 */
+        margin: 0 15px; /* 左右マージン */
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 0.9em;
+    }
     .container {
-        padding: 20px;
+        padding: 15px;
+        max-width: 100%;
     }
 
-    .input-section, .output-section, .options-section {
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .input-section, .output-section {
+        min-width: unset; /* 最小幅を解除 */
+        width: 100%; /* 全幅 */
+        margin-bottom: 15px;
         padding: 15px;
     }
 
-    .options-section {
+    .main-content {
         flex-direction: column; /* 縦並び */
-        align-items: flex-start; /* 左寄せ */
+        gap: 10px;
+    }
+
+    .arrow-icon {
+        padding: 8px 0;
+        font-size: 1.8em;
+        order: 2; /* 入力と出力の間に入れる */
+    }
+
+    .input-section {
+        order: 1;
+    }
+
+    .output-section {
+        order: 3;
+    }
+
+    .options-section {
+        flex-wrap: wrap; /* 折り返し */
+        justify-content: center; /* 中央寄せ */
+        gap: 8px;
+        padding: 10px 15px;
+    }
+
+    .mode-label {
+        margin: 0;
     }
 
     .toggle-switch {
-        margin-bottom: 15px; /* 下に余白 */
+        margin: 0 5px; /* 左右のマージン */
     }
 
-    .toggle-switch span {
-        margin-left: 0; /* 左寄せ */
-        display: block; /* 新しい行に移動 */
-        margin-top: 5px; /* 上に余白 */
-    }
-
-    .button {
-        width: 100%; /* 全幅 */
-        margin-left: 0;
-        margin-right: 0;
+    .button-reset {
+        margin-left: 0; /* 右寄せを解除 */
+        margin-top: 10px; /* 上にマージン */
+        width: auto; /* 幅を自動調整 */
     }
 
     .button-secondary {
-        float: none; /* フロート解除 */
-        margin-top: 15px; /* 上に余白 */
+        float: none;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .copy-message {
-        position: static; /* 通常の位置に戻す */
-        display: block; /* ブロック要素にして新しい行に */
-        text-align: right; /* 右寄せ */
-        margin-top: 10px;
+        position: static;
+        display: block;
+        text-align: right;
+        margin-top: 8px;
         margin-right: 0;
+        font-size: 0.8em;
+        padding: 3px 6px;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+    #outputArea {
+        min-height: 150px;
     }
 }
