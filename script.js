@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleInput = document.getElementById('titleInput');
     const contentInput = document.getElementById('contentInput');
     const chatPaletteMode = document.getElementById('chatPaletteMode');
-    // const generateButton = document.getElementById('generateButton'); // 削除
     const resetButton = document.getElementById('resetButton');
     const outputArea = document.getElementById('outputArea');
     const copyButton = document.getElementById('copyButton');
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = titleInput.value.trim();
         const contentLines = contentInput.value.split('\n').map(line => line.trim()).filter(line => line !== '');
 
-        // タイトルまたは内容が空の場合は、エラーメッセージを表示し、生成を中断
         if (!title && contentLines.length === 0) {
             outputArea.value = 'タイトルと内容を入力してください。';
             return;
@@ -50,18 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
         titleInput.value = '';
         contentInput.value = '';
         outputArea.value = '';
-        chatPaletteMode.checked = false; // チェックボックスもリセット
-        generateRollTable(); // リセット後も表示を更新
+        chatPaletteMode.checked = false;
+        generateRollTable();
+        copyMessage.style.opacity = '0'; // リセット時にCopied!も消す
     });
-
-    // generateButton のイベントリスナーは不要になったため削除
-    // generateButton.addEventListener('click', generateRollTable);
 
     // コピーボタンのイベントリスナー
     copyButton.addEventListener('click', () => {
         if (outputArea.value) {
             navigator.clipboard.writeText(outputArea.value).then(() => {
                 copyMessage.style.opacity = '1';
+                // メッセージを少し表示した後、自動で消す
                 setTimeout(() => {
                     copyMessage.style.opacity = '0';
                 }, 1500); // 1.5秒後に消える
