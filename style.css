@@ -2,81 +2,74 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     color: #333;
-    line-height: 1.5; /* 行の高さを少し小さく */
+    line-height: 1.4; /* 行の高さをさらに小さく */
     margin: 0;
-    padding: 15px; /* 全体のパディングを小さく */
+    padding: 10px; /* 全体のパディングをさらに小さく */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
-    font-size: 0.95em; /* 全体のフォントサイズを微調整 */
+    font-size: 0.9em; /* 全体のフォントサイズを小さく */
 }
 
 .container {
     background-color: #ffffff;
-    padding: 25px; /* パディングを小さく */
-    border-radius: 10px; /* 角丸を少し小さく */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* 影を小さく */
-    max-width: 800px; /* 最大幅を小さく */
+    padding: 20px; /* パディングを小さく */
+    border-radius: 8px; /* 角丸を小さく */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08); /* 影を小さく */
+    max-width: 500px; /* 最大幅を大幅に小さくして常に縦並びを強制 */
     width: 100%;
     box-sizing: border-box;
-    display: flex; /* コンテンツ配置のため追加 */
-    flex-direction: column; /* 縦方向に配置 */
+    display: flex;
+    flex-direction: column; /* 常に縦方向に配置 */
+    align-items: center; /* 子要素を中央揃え */
 }
 
 h1 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 20px; /* マージンを小さく */
+    margin-bottom: 15px; /* マージンを小さく */
     font-weight: 600;
-    font-size: 1.8em; /* タイトルフォントサイズを調整 */
+    font-size: 1.6em; /* タイトルフォントサイズを調整 */
 }
 
 h2 {
     color: #2c3e50;
     text-align: center;
-    margin-bottom: 15px; /* マージンを小さく */
+    margin-bottom: 10px; /* マージンを小さく */
     font-weight: 600;
-    font-size: 1.4em; /* サブタイトルフォントサイズを調整 */
-}
-
-.main-content {
-    display: flex;
-    flex-wrap: wrap; /* レスポンシブ対応 */
-    gap: 15px; /* セクション間の間隔 */
-    justify-content: center;
-    align-items: flex-start;
+    font-size: 1.3em; /* サブタイトルフォントサイズを調整 */
 }
 
 .input-section, .output-section {
-    flex: 1; /* 等しい幅 */
-    min-width: 300px; /* 最小幅 */
+    width: 100%; /* 親要素の幅に合わせる */
     border: 1px solid #e0e0e0;
-    padding: 18px; /* パディングを小さく */
-    border-radius: 8px;
+    padding: 15px; /* パディングを小さく */
+    border-radius: 7px; /* 角丸を小さく */
     background-color: #fcfcfc;
+    margin-bottom: 15px; /* 下マージンを調整 */
 }
 
 .input-group {
-    margin-bottom: 15px; /* マージンを小さく */
+    margin-bottom: 12px; /* マージンを小さく */
 }
 
 label {
     display: block;
-    margin-bottom: 6px; /* マージンを小さく */
+    margin-bottom: 5px; /* マージンを小さく */
     font-weight: 500;
     color: #555;
-    font-size: 0.9em;
+    font-size: 0.85em; /* フォントサイズを小さく */
 }
 
 input[type="text"],
 textarea {
-    width: calc(100% - 15px); /* パディングを考慮 */
-    padding: 10px; /* パディングを小さく */
+    width: calc(100% - 10px); /* パディングを考慮 */
+    padding: 9px; /* パディングを小さく */
     border: 1px solid #ced4da;
-    border-radius: 5px; /* 角丸を小さく */
-    font-size: 0.9rem; /* フォントサイズを小さく */
+    border-radius: 4px; /* 角丸を小さく */
+    font-size: 0.85rem; /* フォントサイズを小さく */
     box-sizing: border-box;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -84,117 +77,76 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
     border-color: #007bff;
-    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25); /* 影を小さく */
+    box-shadow: 0 0 0 0.12rem rgba(0, 123, 255, 0.25); /* 影を小さく */
     outline: none;
 }
 
 textarea {
     resize: vertical;
-    min-height: 90px; /* 最小高さを調整 */
+    min-height: 80px; /* 最小高さを調整 */
 }
 
 .options-section {
     display: flex;
-    align-items: center; /* 垂直方向中央揃え */
-    justify-content: flex-end; /* 右寄せ */
-    gap: 10px; /* 要素間の間隔 */
-    margin-top: 15px; /* マージンを小さく */
-    padding: 12px 18px; /* パディングを調整 */
+    align-items: center;
+    justify-content: flex-start; /* 左寄せに戻す */
+    gap: 8px; /* 要素間の間隔を小さく */
+    margin-top: 12px; /* マージンを小さく */
+    padding: 10px 15px; /* パディングを調整 */
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 7px;
     background-color: #fcfcfc;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
 }
 
 .mode-label {
     font-weight: 500;
     color: #555;
-    font-size: 0.9em;
-    white-space: nowrap; /* 折り返し防止 */
+    font-size: 0.85em; /* フォントサイズを小さく */
+    white-space: nowrap;
 }
 
 /* スイッチのデザイン */
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 45px; /* 幅を小さく */
-    height: 25px; /* 高さを小さく */
-    flex-shrink: 0; /* 縮小を防ぐ */
-}
-
-.toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    width: 40px; /* 幅をさらに小さく */
+    height: 22px; /* 高さをさらに小さく */
+    flex-shrink: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 25px; /* 高さに合わせて調整 */
+    border-radius: 22px; /* 高さに合わせて調整 */
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 19px; /* 高さを小さく */
-    width: 19px; /* 幅を小さく */
-    left: 3px; /* 位置を調整 */
-    bottom: 3px; /* 位置を調整 */
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #007bff;
+    height: 16px; /* 高さを小さく */
+    width: 16px; /* 幅を小さく */
+    left: 3px;
+    bottom: 3px;
 }
 
 input:checked + .slider:before {
-    transform: translateX(20px); /* スライド距離を調整 */
+    transform: translateX(18px); /* スライド距離を調整 */
 }
 
 .button {
-    padding: 8px 15px; /* パディングを小さく */
-    border: none;
-    border-radius: 5px; /* 角丸を小さく */
-    font-size: 0.9rem; /* フォントサイズを小さく */
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-    flex-shrink: 0;
-    display: flex; /* アイコン配置のため */
-    align-items: center; /* アイコン垂直中央揃え */
-    justify-content: center; /* アイコン水平中央揃え */
-    gap: 5px; /* アイコンとテキストの間隔 */
+    padding: 7px 12px; /* パディングを小さく */
+    border-radius: 4px; /* 角丸を小さく */
+    font-size: 0.85rem; /* フォントサイズを小さく */
+    gap: 4px; /* アイコンとテキストの間隔を小さく */
 }
 
 .button-secondary {
-    background-color: #007bff;
-    color: white;
     float: right;
-    margin-top: 10px; /* マージンを調整 */
-}
-
-.button-secondary:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
+    margin-top: 8px; /* マージンを調整 */
 }
 
 .button-reset {
     background-color: #dc3545;
     color: white;
     margin-left: auto; /* 右寄せ */
-    padding: 8px 12px; /* パディングを調整してアイコンのみでも見栄え良く */
-}
-
-.button-reset:hover {
-    background-color: #c82333;
-    transform: translateY(-1px);
+    padding: 7px 10px; /* パディングを調整 */
 }
 
 #outputArea {
@@ -202,37 +154,26 @@ input:checked + .slider:before {
     border: 1px solid #ced4da;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     color: #495057;
-    margin-bottom: 10px; /* マージンを小さく */
+    margin-bottom: 8px; /* マージンを小さく */
     white-space: pre-wrap;
     word-wrap: break-word;
-    font-size: 0.9rem; /* フォントサイズを小さく */
-    min-height: 180px; /* 最小高さを調整 */
+    font-size: 0.85rem; /* フォントサイズを小さく */
+    min-height: 150px; /* 最小高さを調整 */
 }
 
 .copy-message {
-    color: #28a745;
-    font-weight: bold;
-    margin-left: 10px; /* マージンを小さく */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    position: absolute;
-    right: 20px; /* 位置を調整 */
-    bottom: 18px; /* 位置を調整 */
-    background-color: #e6ffed;
-    padding: 4px 8px; /* パディングを小さく */
-    border-radius: 4px; /* 角丸を小さく */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    font-size: 0.85em;
+    margin-left: 8px; /* マージンを小さく */
+    right: 15px; /* 位置を調整 */
+    bottom: 15px; /* 位置を調整 */
+    padding: 3px 6px; /* パディングを小さく */
+    border-radius: 3px; /* 角丸を小さく */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    font-size: 0.8em;
 }
 
 .output-section {
-    position: relative; /* コピーメッセージの基準 */
-}
-
-.output-section::after {
-    content: "";
-    display: table;
-    clear: both;
+    position: relative;
+    margin-bottom: 0; /* 最後のセクションなので下マージンなし */
 }
 
 /* 矢印アイコン */
@@ -240,28 +181,18 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0; /* 上下のパディング */
-    font-size: 2em; /* アイコンサイズ */
+    padding: 8px 0; /* 上下のパディングを小さく */
+    font-size: 1.8em; /* アイコンサイズを調整 */
     color: #6c757d;
     opacity: 0.8;
+    margin-bottom: 15px; /* 下マージンを調整 */
 }
 
-/* レスポンシブデザイン */
-@media (min-width: 769px) {
-    .main-content {
-        flex-wrap: nowrap; /* PCサイズでは折り返さない */
-        align-items: stretch; /* 高さ揃え */
-    }
-    .arrow-icon {
-        flex-direction: column; /* PCでは縦方向 */
-        margin: 0 15px; /* 左右マージン */
-    }
-}
-
+/* レスポンシブデザインの調整 */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
-        font-size: 0.9em;
+        padding: 8px;
+        font-size: 0.85em;
     }
     .container {
         padding: 15px;
@@ -269,81 +200,58 @@ input:checked + .slider:before {
     }
 
     h1 {
-        font-size: 1.6em;
-        margin-bottom: 15px;
+        font-size: 1.5em;
+        margin-bottom: 12px;
     }
     h2 {
-        font-size: 1.3em;
-        margin-bottom: 10px;
+        font-size: 1.2em;
+        margin-bottom: 8px;
     }
 
     .input-section, .output-section {
-        min-width: unset; /* 最小幅を解除 */
-        width: 100%; /* 全幅 */
-        margin-bottom: 15px;
-        padding: 15px;
-    }
-
-    .main-content {
-        flex-direction: column; /* 縦並び */
-        gap: 10px;
+        padding: 12px;
+        margin-bottom: 12px;
     }
 
     .arrow-icon {
-        padding: 8px 0;
-        font-size: 1.8em;
-        order: 2; /* 入力と出力の間に入れる */
-    }
-
-    .input-section {
-        order: 1;
-    }
-
-    .output-section {
-        order: 3;
+        padding: 6px 0;
+        font-size: 1.6em;
+        margin-bottom: 12px;
     }
 
     .options-section {
-        flex-wrap: wrap; /* 折り返し */
-        justify-content: center; /* 中央寄せ */
-        gap: 8px;
-        padding: 10px 15px;
+        justify-content: space-between; /* 要素を左右に広げる */
+        gap: 6px;
+        padding: 8px 12px;
+        flex-wrap: wrap; /* スマホで折り返す */
     }
 
     .mode-label {
-        margin: 0;
+        font-size: 0.8em;
     }
-
     .toggle-switch {
-        margin: 0 5px; /* 左右のマージン */
+        width: 35px;
+        height: 20px;
+    }
+    .slider:before {
+        height: 14px;
+        width: 14px;
+    }
+    input:checked + .slider:before {
+        transform: translateX(15px);
     }
 
     .button-reset {
-        margin-left: 0; /* 右寄せを解除 */
-        margin-top: 10px; /* 上にマージン */
-        width: auto; /* 幅を自動調整 */
+        margin-top: 0; /* 左右の余白を優先 */
     }
-
     .button-secondary {
-        float: none;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .copy-message {
-        position: static;
-        display: block;
-        text-align: right;
         margin-top: 8px;
-        margin-right: 0;
-        font-size: 0.8em;
-        padding: 3px 6px;
     }
 
-    textarea {
-        min-height: 80px;
-    }
     #outputArea {
-        min-height: 150px;
+        min-height: 120px;
+    }
+    .copy-message {
+        font-size: 0.75em;
     }
 }
