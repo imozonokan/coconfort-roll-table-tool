@@ -42,6 +42,50 @@ h2 {
     font-size: 1.3em;
 }
 
+/* Tabs */
+.tabs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #555;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    top: 2px; /* border-bottomを隠すため */
+}
+
+.tab-button:hover {
+    background-color: #e2e6ea;
+}
+
+.tab-button.active {
+    background-color: #ffffff;
+    color: #007bff;
+    border-bottom: 2px solid #ffffff; /* アクティブなタブの下線を消す */
+    font-weight: bold;
+    z-index: 1; /* 手前に表示 */
+}
+
+.tab-content {
+    width: 100%;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
 .input-section, .output-section {
     width: 100%;
     border: 1px solid #e0e0e0;
@@ -170,8 +214,6 @@ input:checked + .slider:before {
 .button-secondary {
     background-color: #007bff;
     color: white;
-    /* float: right; */ /* floatを削除しflexboxで制御 */
-    /* margin-top: 8px; */ /* 親のflexboxで調整 */
 }
 
 .button-secondary:hover {
@@ -191,7 +233,7 @@ input:checked + .slider:before {
     transform: translateY(-1px);
 }
 
-#outputArea {
+#outputArea, #choiceOutputArea {
     background-color: #e9ecef;
     border: 1px solid #ced4da;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
@@ -215,12 +257,8 @@ input:checked + .slider:before {
 .copy-message {
     color: #28a745;
     font-weight: bold;
-    /* margin-left: 8px; */ /* gapで制御するため削除 */
     opacity: 0; /* 初期状態では非表示 */
     transition: opacity 0.3s ease-in-out;
-    /* position: relative; */ /* flexbox内で制御するため削除 */
-    /* right: unset; */
-    /* bottom: unset; */
     background-color: #e6ffed;
     padding: 3px 6px;
     border-radius: 3px;
@@ -267,6 +305,11 @@ input:checked + .slider:before {
         margin-bottom: 8px;
     }
 
+    .tab-button {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
     .input-section, .output-section {
         padding: 12px;
         margin-bottom: 12px;
@@ -303,20 +346,12 @@ input:checked + .slider:before {
     .button-reset {
         margin-top: 0;
     }
-    .button-secondary {
-        /* margin-top: 8px; */ /* output-actionsのflexboxで制御 */
-    }
 
-    #outputArea {
+    #outputArea, #choiceOutputArea {
         min-height: 120px;
     }
     .copy-message {
         font-size: 0.75em;
-        /* position: static; */ /* flexbox内で制御 */
-        /* display: inline-block; */
-        /* text-align: right; */
-        /* margin-top: 0; */
-        /* margin-right: 0; */
     }
 
     .output-actions {
