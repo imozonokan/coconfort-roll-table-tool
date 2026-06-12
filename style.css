@@ -18,7 +18,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
-    max-width: 520px; /* ここを少し広げました */
+    max-width: 500px; /* ここを元の値に戻し、タブやコンテンツのパディングで調整します */
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -46,9 +46,12 @@ h2 {
 .tabs {
     display: flex;
     width: 100%;
-    margin-top: 5px; /* ここを調整しました */
+    margin-top: 5px;
     margin-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
+    /* .containerのpaddingに合わせて左右に少し余白を持たせる */
+    padding: 0 5px; /* ここを調整しました */
+    box-sizing: border-box; /* 追加 */
 }
 
 .tab-button {
@@ -62,7 +65,7 @@ h2 {
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 8px 8px 0 0;
     position: relative;
-    top: 2px; /* border-bottomを隠すため */
+    top: 2px;
 }
 
 .tab-button:hover {
@@ -72,17 +75,19 @@ h2 {
 .tab-button.active {
     background-color: #ffffff;
     color: #007bff;
-    border-bottom: 2px solid #ffffff; /* アクティブなタブの下線を消す */
+    border-bottom: 2px solid #ffffff;
     font-weight: bold;
-    z-index: 1; /* 手前に表示 */
-    top: 2px; /* ここを調整しました */
+    z-index: 1;
+    top: 2px;
 }
 
 .tab-content {
     width: 100%;
     display: none;
-    /* タブコンテンツ自体の左右パディングを削除し、中のセクションで調整 */
-    padding: 0; 
+    padding: 0;
+    /* .containerのpaddingに合わせて左右に少し余白を持たせる */
+    padding: 0 5px; /* ここを調整しました */
+    box-sizing: border-box; /* 追加 */
 }
 
 .tab-content.active {
@@ -97,7 +102,7 @@ h2 {
     border-radius: 7px;
     background-color: #fcfcfc;
     margin-bottom: 15px;
-    box-sizing: border-box; /* 追加 */
+    box-sizing: border-box;
 }
 
 .input-group {
@@ -146,7 +151,7 @@ textarea {
     border-radius: 7px;
     background-color: #fcfcfc;
     flex-wrap: wrap;
-    box-sizing: border-box; /* 追加 */
+    box-sizing: border-box;
 }
 
 .mode-label {
@@ -248,7 +253,7 @@ input:checked + .slider:before {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 0.85rem;
-    min-height: 150px;
+    min-height: 80px; /* ここを調整しました */
 }
 
 /* コピーメッセージとボタンを内包するdiv */
