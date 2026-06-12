@@ -18,7 +18,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
-    max-width: 500px;
+    max-width: 520px; /* ここを少し広げました */
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -46,6 +46,7 @@ h2 {
 .tabs {
     display: flex;
     width: 100%;
+    margin-top: 5px; /* ここを調整しました */
     margin-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
 }
@@ -74,11 +75,14 @@ h2 {
     border-bottom: 2px solid #ffffff; /* アクティブなタブの下線を消す */
     font-weight: bold;
     z-index: 1; /* 手前に表示 */
+    top: 2px; /* ここを調整しました */
 }
 
 .tab-content {
     width: 100%;
     display: none;
+    /* タブコンテンツ自体の左右パディングを削除し、中のセクションで調整 */
+    padding: 0; 
 }
 
 .tab-content.active {
@@ -93,6 +97,7 @@ h2 {
     border-radius: 7px;
     background-color: #fcfcfc;
     margin-bottom: 15px;
+    box-sizing: border-box; /* 追加 */
 }
 
 .input-group {
@@ -141,6 +146,7 @@ textarea {
     border-radius: 7px;
     background-color: #fcfcfc;
     flex-wrap: wrap;
+    box-sizing: border-box; /* 追加 */
 }
 
 .mode-label {
