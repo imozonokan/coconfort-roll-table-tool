@@ -57,27 +57,27 @@ h2 {
     flex: 1;
     padding: 10px 15px;
     border: none;
-    background-color: #f0f0f0;
-    color: #555;
+    background-color: #ffffff; /* 未選択時: 白背景 */
+    color: #555; /* 未選択時: 灰色文字 */
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 8px 8px 0 0;
     position: relative;
-    /* top: 2px; */ /* 不要な線が見えないように調整 */
+    top: 0; /* 位置調整 */
+    border-bottom: 2px solid transparent; /* 未選択時の下線は透明 */
 }
 
 .tab-button:hover {
-    background-color: #e2e6ea;
+    background-color: #f8f8f8; /* ホバー時の背景色を少しだけ明るく */
 }
 
 .tab-button.active {
-    background-color: #ffffff;
-    color: #007bff;
-    /* border-bottom: 2px solid #ffffff; */ /* この線がゴミのように見えていたので削除 */
+    background-color: #f0f0f0; /* 選択時: 薄い灰色背景 */
+    color: #007bff; /* 選択時: 青文字 */
     font-weight: bold;
     z-index: 1;
-    /* top: 2px; */ /* 不要な線が見えないように調整 */
+    border-bottom: 2px solid #007bff; /* 選択時の下線は青色 */
 }
 
 .tab-content {
@@ -250,7 +250,7 @@ input:checked + .slider:before {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 0.85rem;
-    min-height: 50px; /* ここを調整しました (入力欄80pxより小さく) */
+    min-height: 80px; /* ここをさらに調整し、入力欄と同じ高さにしました */
 }
 
 /* コピーメッセージとボタンを内包するdiv */
