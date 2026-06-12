@@ -12,37 +12,80 @@
     <div class="container">
         <h1>ココフォリア向けロールテーブル作成ツール</h1>
 
-        <div class="input-section">
-            <div class="input-group">
-                <label for="titleInput">タイトル</label>
-                <input type="text" id="titleInput" placeholder="ロールテーブルのタイトルを入力">
-            </div>
-            <div class="input-group">
-                <label for="contentInput">ロールテーブルの内容 (改行で項目を区切ります)</label>
-                <textarea id="contentInput" rows="7" placeholder="内容を1行ずつ入力してください"></textarea>
-            </div>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="rollTableTab">通常ロールテーブル</button>
+            <button class="tab-button" data-tab="choiceDiceTab">Choiceダイス変換</button>
+        </div>
 
-            <div class="options-section">
-                <span class="mode-label">通常コマンド</span>
-                <div class="toggle-switch">
-                    <input type="checkbox" id="chatPaletteMode">
-                    <label for="chatPaletteMode" class="slider round"></label>
+        <div id="rollTableTab" class="tab-content active">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="titleInput">タイトル</label>
+                    <input type="text" id="titleInput" placeholder="ロールテーブルのタイトルを入力">
                 </div>
-                <span class="mode-label">チャットパレット用 (/n区切り)</span>
-                <button id="resetButton" class="button button-reset" title="入力内容をリセット"><i class="fas fa-trash-alt"></i></button>
+                <div class="input-group">
+                    <label for="contentInput">ロールテーブルの内容 (改行で項目を区切ります)</label>
+                    <textarea id="contentInput" rows="7" placeholder="内容を1行ずつ入力してください"></textarea>
+                </div>
+
+                <div class="options-section">
+                    <span class="mode-label">通常コマンド</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="chatPaletteMode">
+                        <label for="chatPaletteMode" class="slider round"></label>
+                    </div>
+                    <span class="mode-label">チャットパレット用 (/n区切り)</span>
+                    <button id="resetButton" class="button button-reset" title="入力内容をリセット"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="arrow-icon">
+                ▼
+            </div>
+
+            <div class="output-section">
+                <h2>生成結果</h2>
+                <textarea id="outputArea" rows="15" readonly></textarea>
+                <div class="output-actions">
+                    <span id="copyMessage" class="copy-message">Copied!</span>
+                    <button id="copyButton" class="button button-secondary">結果をコピー</button>
+                </div>
             </div>
         </div>
 
-        <div class="arrow-icon">
-            ▼
-        </div>
+        <div id="choiceDiceTab" class="tab-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="choiceTitleInput">タイトル</label>
+                    <input type="text" id="choiceTitleInput" placeholder="ロールテーブルのタイトルを入力">
+                </div>
+                <div class="input-group">
+                    <label for="choiceInput">Choiceダイスの内容をペースト (例: choice[項目1,項目2] または choice 項目1 項目2)</label>
+                    <textarea id="choiceInput" rows="7" placeholder="choice[項目1,項目2,項目3]"></textarea>
+                </div>
 
-        <div class="output-section">
-            <h2>生成結果</h2>
-            <textarea id="outputArea" rows="15" readonly></textarea>
-            <div class="output-actions">
-                <span id="copyMessage" class="copy-message">Copied!</span>
-                <button id="copyButton" class="button button-secondary">結果をコピー</button>
+                <div class="options-section">
+                    <span class="mode-label">通常コマンド</span>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="choiceChatPaletteMode">
+                        <label for="choiceChatPaletteMode" class="slider round"></label>
+                    </div>
+                    <span class="mode-label">チャットパレット用 (/n区切り)</span>
+                    <button id="choiceResetButton" class="button button-reset" title="入力内容をリセット"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="arrow-icon">
+                ▼
+            </div>
+
+            <div class="output-section">
+                <h2>生成結果</h2>
+                <textarea id="choiceOutputArea" rows="15" readonly></textarea>
+                <div class="output-actions">
+                    <span id="choiceCopyMessage" class="copy-message">Copied!</span>
+                    <button id="choiceCopyButton" class="button button-secondary">結果をコピー</button>
+                </div>
             </div>
         </div>
     </div>
