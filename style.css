@@ -18,7 +18,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
-    max-width: 500px; /* ここを元の値に戻し、タブやコンテンツのパディングで調整します */
+    max-width: 500px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -49,9 +49,8 @@ h2 {
     margin-top: 5px;
     margin-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
-    /* .containerのpaddingに合わせて左右に少し余白を持たせる */
-    padding: 0 5px; /* ここを調整しました */
-    box-sizing: border-box; /* 追加 */
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
 .tab-button {
@@ -65,7 +64,7 @@ h2 {
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 8px 8px 0 0;
     position: relative;
-    top: 2px;
+    /* top: 2px; */ /* 不要な線が見えないように調整 */
 }
 
 .tab-button:hover {
@@ -75,19 +74,17 @@ h2 {
 .tab-button.active {
     background-color: #ffffff;
     color: #007bff;
-    border-bottom: 2px solid #ffffff;
+    /* border-bottom: 2px solid #ffffff; */ /* この線がゴミのように見えていたので削除 */
     font-weight: bold;
     z-index: 1;
-    top: 2px;
+    /* top: 2px; */ /* 不要な線が見えないように調整 */
 }
 
 .tab-content {
     width: 100%;
     display: none;
-    padding: 0;
-    /* .containerのpaddingに合わせて左右に少し余白を持たせる */
-    padding: 0 5px; /* ここを調整しました */
-    box-sizing: border-box; /* 追加 */
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
 .tab-content.active {
@@ -253,7 +250,7 @@ input:checked + .slider:before {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 0.85rem;
-    min-height: 80px; /* ここを調整しました */
+    min-height: 50px; /* ここを調整しました (入力欄80pxより小さく) */
 }
 
 /* コピーメッセージとボタンを内包するdiv */
